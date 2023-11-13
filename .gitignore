@@ -4,3 +4,5 @@ testResults/spi_sensor
 testResults/spi_slave
 testResults/internalLogic
 testResults/transcript
+doScripts/
+testResults/Logs/
