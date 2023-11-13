@@ -1,0 +1,6 @@
+doScript
+testResults/regFile
+testResults/spi_sensor
+testResults/spi_slave
+testResults/internalLogic
+testResults/transcript
