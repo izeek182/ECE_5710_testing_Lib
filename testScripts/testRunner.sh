@@ -1,3 +1,20 @@
+
+
+CallRoot="$(pwd)"
+
+# Default values
+TestResultsDir=${1:-./testResults}
+SrcDir=${2:-../5710-Final-Project}
+
+TestResultsDir="$CallRoot/$TestResultsDir"
+ProjectDir="$TestResultsDir/InternalLogic_Tb"
+
+SrcDir="$CallRoot/$SrcDir"
+DoScripts="$CallRoot/doScripts"
+
+mkdir -p $DoScripts
+mkdir -p $TestResultsDir/Logs
+
 # ./script.sh my_argument
 
 # Arg1 Path to script
@@ -10,25 +27,6 @@
 # RunDoFile ./tmp/test.do $TestResultsDir "internalLogic" ./tmp/results
 # vsim -c -do
 
-function SetupTestEnv {
-    CallRoot="$(pwd)"
-
-    # Default values
-    TestResultsDir=${1:-./testResults}
-
-
-    SrcDir=${2:-../5710-Final-Project}
-
-    TestResultsDir="$CallRoot/$TestResultsDir"
-    ProjectDir="$TestResultsDir/InternalLogic_Tb"
-    
-    SrcDir="$CallRoot/$SrcDir"
-    DoScripts="$CallRoot/doScripts"
-    
-    mkdir -p $TestResultsDir
-    mkdir -p $ProjectDir
-    mkdir -p $DoScripts
-}
 
 # Arg1 Path to script
 # Arg2 Path To projects
@@ -82,7 +80,6 @@ function RunDoFile {
     if [ -f "$LogFilePath" ] ; then
         rm "$LogFilePath"
     fi
-
     touch $LogFilePath
     cd $2
     vsim -c -do "$1" > "$LogFilePath"
@@ -96,7 +93,6 @@ function RunTest {
     local TestName=$1
     shift
     local files=("$@")
-    mkdir -p $TestResultsDir/Logs
 
     GenerateDoScript $DoScripts/$TestName.do $TestResultsDir $TestName $SrcDir ${files[@]}
     RunDoFile $DoScripts/$TestName.do $TestResultsDir $TestName $TestResultsDir/Logs/$TestName.log
