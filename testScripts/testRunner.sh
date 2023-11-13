@@ -64,7 +64,7 @@ function GenerateDoScript {
     do
         packageList+=" work.$i"
     done
-    echo "vsim -t ns$packageList -voptargs=+acc" >> $DoFile
+    echo "vsim$packageList -voptargs=+acc" >> $DoFile
     echo "run -all" >> $DoFile
     echo "quit" >> $DoFile
 }
