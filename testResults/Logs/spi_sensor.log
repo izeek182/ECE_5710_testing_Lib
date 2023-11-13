@@ -1,0 +1,101 @@
+Reading pref.tcl
+
+# 2019.4
+
+# do /home/u1173001/ece_5710_final_project/TestRunner/doScripts/spi_sensor.do
+# Loading project spi_sensor
+# vlog -work work -vopt -stats=none /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor.v
+# QuestaSim-64 vlog 2019.4 Compiler 2019.10 Oct 15 2019
+# -- Compiling module spi_sensor
+# ** Warning: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor.v(120): (vlog-2182) 'spiActive' might be read before written in always_comb or always @* block.
+# ** Warning: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor.v(107): (vlog-2182) 'clk_mirror' might be read before written in always_comb or always @* block.
+# 
+# Top level modules:
+# 	spi_sensor
+QuestaSim> # vlog -work work -vopt -stats=none /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v
+# QuestaSim-64 vlog 2019.4 Compiler 2019.10 Oct 15 2019
+# -- Compiling module spi_sensor_testbench
+# ** Warning: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v(194): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+# 
+# Top level modules:
+# 	spi_sensor_testbench
+QuestaSim> # 2 compiles, 0 failed with no errors.
+# vsim -t ns work.spi_sensor work.spi_sensor_testbench -voptargs="+acc" 
+# Start time: 19:30:35 on Nov 12,2023
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor.v(120): (vopt-2182) 'spiActive' might be read before written in always_comb or always @* block.
+# ** Warning: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor.v(107): (vopt-2182) 'clk_mirror' might be read before written in always_comb or always @* block.
+# //  Questa Sim-64
+# //  Version 2019.4 linux_x86_64 Oct 15 2019
+# //
+# //  Copyright 1991-2019 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  QuestaSim and its associated documentation contain trade
+# //  secrets and commercial or financial information that are the property of
+# //  Mentor Graphics Corporation and are privileged, confidential,
+# //  and exempt from disclosure under the Freedom of Information Act,
+# //  5 U.S.C. Section 552. Furthermore, this information
+# //  is prohibited from disclosure under the Trade Secrets Act,
+# //  18 U.S.C. Section 1905.
+# //
+# Loading work.spi_sensor(fast)
+# Loading work.spi_sensor_testbench(fast)
+# ** Warning: (vsim-3015) [PCDPC] - Port size (3) does not match connection size (4) for port 'requestedChip'. The port definition is at: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v(10).
+#    Time: 0 ns  Iteration: 0  Instance: /spi_sensor_testbench/spiSensor File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 24
+# ** Warning: (vsim-3015) [PCDPC] - Port size (8) does not match connection size (4) for port 'current_sense_cs'. The port definition is at: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v(20).
+#    Time: 0 ns  Iteration: 0  Instance: /spi_sensor_testbench/spiSensor File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 24
+# ** Error: ERROR: Address not sent to sensor correctly. Sent 0203, got 001e
+#    Time: 20 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 74
+# ** Error: ERROR: requestValid is low when it should be high
+#    Time: 37 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 86
+# ** Error: ERROR: For data sent aaaa, but got back 0000
+#    Time: 37 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 92
+# ** Error: ERROR: Address not sent to sensor correctly. Sent 0006, got 003c
+#    Time: 59 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 74
+# ** Error: ERROR: requestValid is low when it should be high
+#    Time: 68 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 86
+# ** Error: ERROR: For data sent 0055, but got back 0000
+#    Time: 68 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 92
+# ** Error: ERROR: Address not sent to sensor correctly. Sent 0005, got 0066
+#    Time: 90 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 125
+# ** Error: ERROR: requestValid is low when it should be high
+#    Time: 107 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 141
+# ** Error: ERROR: For data sent 5555, but got back 0000
+#    Time: 107 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 147
+# ** Error: ERROR: Address not sent to sensor correctly. Sent 0103, got 000f
+#    Time: 129 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 125
+# ** Error: ERROR: requestValid is low when it should be high
+#    Time: 138 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 141
+# ** Error: ERROR: For data sent 0066, but got back 0001
+#    Time: 138 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 147
+# ** Error: ERROR: Address not sent to sensor correctly. Sent 0002, got 0018
+#    Time: 152 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 74
+# ** Error: ERROR: requestValid is low when it should be high
+#    Time: 169 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 86
+# ** Error: ERROR: For data sent 3333, but got back 0000
+#    Time: 169 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 92
+# ** Error: ERROR: Address not sent to sensor correctly. Sent 0003, got 000f
+#    Time: 183 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 74
+# ** Error: ERROR: requestValid is low when it should be high
+#    Time: 192 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 86
+# ** Error: ERROR: For data sent 0077, but got back 0000
+#    Time: 192 ns  Scope: spi_sensor_testbench.askForNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 92
+# ** Error: ERROR: Address not sent to sensor correctly. Sent 0004, got 0060
+#    Time: 206 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 125
+# ** Error: ERROR: requestValid is low when it should be high
+#    Time: 223 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 141
+# ** Error: ERROR: For data sent 9999, but got back c300
+#    Time: 223 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 147
+# ** Error: ERROR: Address not sent to sensor correctly. Sent 0005, got 0033
+#    Time: 237 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 125
+# ** Error: ERROR: requestValid is low when it should be high
+#    Time: 246 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 141
+# ** Error: ERROR: For data sent 0022, but got back 0000
+#    Time: 246 ns  Scope: spi_sensor_testbench.sendNum File: /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v Line: 147
+# ** Note: $stop    : /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v(216)
+#    Time: 246 ns  Iteration: 0  Instance: /spi_sensor_testbench
+# Break in Module spi_sensor_testbench at /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v line 216
+# Stopped at /home/u1173001/ece_5710_final_project/5710-Final-Project/spi_sensor_testbench.v line 216
+# End time: 19:30:37 on Nov 12,2023, Elapsed time: 0:00:02
+# Errors: 24, Warnings: 4
